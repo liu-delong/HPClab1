@@ -71,3 +71,13 @@ void print_matrix(int **A,int N)
         printf("\n");
     }
 }
+void copy_matrix(int **src,int **dst,int N)
+{
+    for(int i=0;i<N;i++)
+    {
+        for(int j=0;j<N;j++)
+        {
+            dst[i][j]=src[i][j];
+        }
+    }
+}
