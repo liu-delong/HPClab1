@@ -40,6 +40,17 @@ ifeq ($(detected_OS),Linux)
 	create_folder_obj:=if test -d obj;then echo;else mkidr obj; fi
 endif
 
+
+
+target:=main1 main2
+ifeq ($(detected_OS),Windows)
+	target:=$(patsubst %,%.exe,$(target))
+endif
+
+# 开始定义规则
+
+all:$(target)
+
 # 自动依赖生成
 depend_file:=$(patsubst %.o,%.d,$(common_obj) $(obj))
 depend_file:=$(wildcard $(addprefix obj/,$(depend_file)))
@@ -48,23 +59,17 @@ ifneq ($(depend_file),)
 include $(depend_file)
 endif
 
-target:=main1
-ifeq ($(detected_OS),Windows)
-	target:=$(patsubst %,%.exe,$(target))
-endif
-
-# 开始定义规则
-
-all:$(target)
- 
 .PHONY:all clean
 
 main1 main1.exe:obj/main1.o $(addprefix obj/,$(common_obj))
 	g++ -g $^ -o $@
 
+main2 main2.exe:obj/main2.o $(addprefix obj/,$(common_obj))
+	g++ -g $^ -o $@
+
 obj/%.o:%.cpp
 	$(shell $(create_folder_obj))
-	g++ -c $^ -o $@ -MD
+	g++ -c $< -o $@ -MD
 
 clean:
 	$(rm) *.exe $(addprefix obj$(subpath_sign),*.o *.d)
