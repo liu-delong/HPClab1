@@ -8,11 +8,9 @@
 using namespace std;
 int main(int argc,char** argv)
 {
-    int m=atoi(argv[1]);
-
-    int n=atoi(argv[2]);
-
-    int k=atoi(argv[3]);
+    printf("please enter argument m n k,separate them by blank:");
+    int m,n,k;
+    scanf("%d %d %d",&m,&n,&k);
     vector< vector<int> > A(m,vector<int>(n));
     vector< vector<int> > B(n,vector<int>(k));
     vector< vector<int> > C(m,vector<int>(k));

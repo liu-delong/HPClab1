@@ -32,19 +32,16 @@ void init_matrix(int N,int** A)
 int** create_matrix(int N)
 {
     int **A=new int*[N];
+    int *matrix=new int[N*N];
     for(int i=0;i<N;i++)
     {
-        A[i]=new int[N];
+        A[i]=matrix+i*N;
     }
     return A;
 }
 void delete_matrix(int N,int **A)
 {
-    for(int i=0;i<N;i++)
-    {
-        delete[] A[i];
-    }
-    delete A;
+    delete A[0];
 }
 
 void print_matrix(vector<vector<int>> &A)
