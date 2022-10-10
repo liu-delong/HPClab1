@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "f:/my university/learning/da_si_shang/HPC/exp/exp1/src/common",
-      "program": "f:/my university/learning/da_si_shang/HPC/exp/exp1/src/common/build/Debug/outDebug",
+      "cwd": "F:\\my university\\learning\\da_si_shang\\HPC\\exp\\HPClab1",
+      "program": "F:\\my university\\learning\\da_si_shang\\HPC\\exp\\HPClab1\\main2.exe",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

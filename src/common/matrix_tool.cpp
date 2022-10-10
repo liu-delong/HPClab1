@@ -42,6 +42,7 @@ int** create_matrix(int N)
 void delete_matrix(int N,int **A)
 {
     delete A[0];
+    delete A;
 }
 
 void print_matrix(vector<vector<int>> &A)

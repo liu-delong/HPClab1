@@ -63,9 +63,13 @@ endif
 
 main1 main1.exe:obj/main1.o $(addprefix obj/,$(common_obj))
 	g++ -g $^ -o $@
+	@echo "runing $@"
+	.$(subpath_sign)$@
 
 main2 main2.exe:obj/main2.o $(addprefix obj/,$(common_obj))
 	g++ -g $^ -o $@
+	@echo "runing $@"
+	.$(subpath_sign)$@
 
 obj/%.o:%.cpp
 	$(shell $(create_folder_obj))
